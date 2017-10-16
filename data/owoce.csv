@@ -1,10 +1,16 @@
-towar,1880,1900,1910
-banany,30,300,1800
-kakao,60,102,227
-kawa,550,970,1090
-kauczuk,11,53,87
-włókno bawełniane,950,1200,1770
-juta,600,1220,1560
-nasiona oleiste,,,2700
-trzcina cukrowa,1850,3340,6320
-herbata,175,290,360
+rok,owoc,produkcja
+1880,banan,30
+1900,banan,300
+1910,banan,1800
+1880,kakao,60
+1900,kakao,102
+1910,kakao,227
+1880,kawa,550
+1900,kawa,970
+1910,kawa,1090
+1880,kauczuk,11
+1900,kauczuk,53
+1910,kauczuk,87
+1880,trzcina cukrowa,1850
+1900,trzcina cukrowa,3340
+1910,trzcina cukrowa,290
