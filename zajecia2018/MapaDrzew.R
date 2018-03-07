@@ -78,3 +78,28 @@ mmap <- function(e) {
   m <- leaflet(data = d) %>% addTiles() %>% addMarkers(d$x,d$y,popup = paste('<strong>Gatunek</strong>:<em>',d$gatunek,"</em><br><strong>Stan zdrowia</strong>:",d$stan_zdrowia))
   return(m)
 }
+
+##################
+
+mmap2 <- function(k,w,l) {
+  a <- "https://api.um.warszawa.pl/api/action/datastore_search?resource_id=ed6217dd-c8d0-4f7b-8bed-3b7eb81a95ba"
+  f <- paste0('&filters={"',k,'":"',w,'"}')
+  f2 <- paste0("&limit=",l)
+  u <- paste0(a,URLencode(f),f2)
+  cat(u)
+#  return()
+  require(jsonlite)
+  require(leaflet)
+  d <- fromJSON(u)
+  options(digits=9)
+  d <- d$result$records
+  d <- d[,c(3,16,19,2)]
+  names(d)[2] <- "x"
+  names(d)[1] <- "y"
+  d$y <- as.numeric(d$y)
+  d$x <- as.numeric(d$x)
+  m <- leaflet(data = d) %>% addTiles() %>% addMarkers(d$x,d$y,popup = paste('<strong>Gatunek</strong>:<em>',d$gatunek,"</em><br><strong>Stan zdrowia</strong>:",d$stan_zdrowia))
+  return(m)
+}
+
+w <-  mmap2("dzielnica","Wola",100)
