@@ -36,3 +36,28 @@ d <- leaflet(data = drzewa1) %>% addTiles() %>% addMarkers(drzewa1$x,drzewa1$y,p
 # wyswietlanie mapy
 
 d
+
+########################################
+
+
+# przyklad #2
+
+u <- "https://api.um.warszawa.pl/api/action/datastore_search?resource_id=ed6217dd-c8d0-4f7b-8bed-3b7eb81a95ba&limit=100"
+
+drzewa <- fromJSON(u)
+
+drzewa <- drzewa$result$records
+drzewa1 <- drzewa[,c(3,16,19,2)]
+
+names(drzewa1)[2] <- "x"
+names(drzewa1)[1] <- "y"
+
+options(digits=9)
+
+drzewa1$y <- as.numeric(drzewa1$y)
+drzewa1$x <- as.numeric(drzewa1$x)
+
+d <- leaflet(data = drzewa1) %>% addTiles() %>% addMarkers(drzewa1$x,drzewa1$y,popup = paste('<strong>Gatunek</strong>:<em>',drzewa1$gatunek,"</em><br><strong>Stan zdrowia</strong>:",drzewa1$stan_zdrowia))
+
+d
+
