@@ -61,3 +61,20 @@ d <- leaflet(data = drzewa1) %>% addTiles() %>% addMarkers(drzewa1$x,drzewa1$y,p
 
 d
 
+#######################################
+
+
+mmap <- function(e) {
+  require(jsonlite)
+  require(leaflet)
+  d <- fromJSON(URLencode(e))
+  options(digits=9)
+  d <- d$result$records
+  d <- d[,c(3,16,19,2)]
+  names(d)[2] <- "x"
+  names(d)[1] <- "y"
+  d$y <- as.numeric(d$y)
+  d$x <- as.numeric(d$x)
+  m <- leaflet(data = d) %>% addTiles() %>% addMarkers(d$x,d$y,popup = paste('<strong>Gatunek</strong>:<em>',d$gatunek,"</em><br><strong>Stan zdrowia</strong>:",d$stan_zdrowia))
+  return(m)
+}
