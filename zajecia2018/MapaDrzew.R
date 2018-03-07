@@ -31,7 +31,7 @@ drzewa1$x <- as.numeric(drzewa1$x)
 
 # skladanie mapy
 
-d <- leaflet(data = drzewa1) %>% addTiles() %>% addMarkers(drzewa1$x,drzewa1$y,popup = drzewa$gatunek)
+d <- leaflet(data = drzewa1) %>% addTiles() %>% addMarkers(drzewa1$x,drzewa1$y,popup = drzewa1$gatunek)
 
 # wyswietlanie mapy
 
