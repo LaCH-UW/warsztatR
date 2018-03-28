@@ -46,5 +46,35 @@ namiary <- namiary %>% filter(miejscowosc != "N/A")
 #s[1]
 
 dane <- inner_join(sc4,namiary)
+dane.test <- merge(sc4,namiary)
+
+t <- "Ala ma kota"
+
+t %>% nchar()
+
+t + nchar()
+
+t <- 10
+l <- 20
+
+t + l
+
+
+### generujemy mape
+
+m <- leaflet(dane) %>%  addTiles() %>% addMarkers(as.double(dane$lon1),as.double(dane$lat1),popup=dane$miejscowosc)
+
+options(digits=9)
+
+as.double(dane$lat1[100])
+
+
+### mapa #2
+
+paste("Miejscowość:",dane$miejscowosc,"<br>Pobrania:",dane$pobrania)
+
+m2 <- leaflet(dane) %>%  addTiles() %>% addMarkers(as.double(dane$lon1),as.double(dane$lat1),popup=paste("Miejscowość:",dane$miejscowosc,"<br>Pobrania:",dane$pobrania))
+
+m2
 
 
