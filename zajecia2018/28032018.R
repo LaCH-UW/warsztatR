@@ -78,3 +78,11 @@ m2 <- leaflet(dane) %>%  addTiles() %>% addMarkers(as.double(dane$lon1),as.doubl
 m2 %>% addProviderTiles(providers$CartoDB.Positron)
 
 # https://rstudio.github.io/leaflet/basemaps.html
+
+
+# labels
+
+m3 <- leaflet(dane) %>%
+        addTiles() %>%
+          addMarkers(as.double(dane$lon1),as.double(dane$lat1),popup=paste("Miejscowość:",dane$miejscowosc,"<br>Pobrania:",dane$pobrania), label=paste("Liczba pobrań:",dane$pobrania)) %>%
+            addProviderTiles(providers$CartoDB.Positron)
