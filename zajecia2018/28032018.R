@@ -100,6 +100,21 @@ ikony <- makeIcon(
 m4 %>% addMarkers(as.double(dane$lon1),as.double(dane$lat1),popup=paste("Miejscowość:",dane$miejscowosc,"<br>Pobrania:",dane$pobrania), label=paste("Liczba pobrań:",dane$pobrania), icon = ikony) %>% addProviderTiles(providers$CartoDB.Positron)
 
 
+# ikony takie same
+
+# ikona
+
+m5 <- leaflet(dane) %>% addTiles()
+
+
+ikony <- makeIcon(
+  iconUrl = "pirate.svg",
+  iconWidth = 20, 
+  iconHeight = 20
+  )
+
+m5 %>% addMarkers(as.double(dane$lon1),as.double(dane$lat1),popup=paste("Miejscowość:",dane$miejscowosc,"<br>Pobrania:",dane$pobrania), label=paste("Liczba pobrań:",dane$pobrania), icon = ikony, clusterOptions = markerClusterOptions()) %>% addProviderTiles(providers$CartoDB.Positron)
+
 
 
 
