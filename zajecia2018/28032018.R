@@ -102,7 +102,7 @@ m4 %>% addMarkers(as.double(dane$lon1),as.double(dane$lat1),popup=paste("Miejsco
 
 # ikony takie same
 
-# ikona
+# ikona i klaster
 
 m5 <- leaflet(dane) %>% addTiles()
 
