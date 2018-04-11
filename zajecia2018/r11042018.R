@@ -61,6 +61,9 @@ kopia_korpus <- korpus
 # wielkie litery na małe
 
 korpus <- tm_map(korpus,content_transformer(tolower))
+korpus <- tm_map(korpus,stripWhitespace)
+korpus <- tm_map(korpus,removeNumbers)
+korpus <- tm_map(korpus,removePunctuation)
 
 
 
