@@ -58,5 +58,9 @@ meta(korpus[[1]])
 
 kopia_korpus <- korpus
 
+# wielkie litery na małe
+
+korpus <- tm_map(korpus,content_transformer(tolower))
+
 
 
