@@ -41,7 +41,22 @@ getkep <- function(a) {
     write(t, file = paste0("listy/",i,".txt"))
     i <- i + 1
   }
-  
-  
 }
+
+# uruchamianie funkcji i sciaganie tresci
+getkep(adresy)
+
+# 4. budowa korpusu 
+
+library(tm)
+
+korpus <- VCorpus(DirSource('listy'))
+
+content(korpus[[1]])
+
+meta(korpus[[1]])
+
+kopia_korpus <- korpus
+
+
 
