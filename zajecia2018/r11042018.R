@@ -52,7 +52,7 @@ library(tm)
 
 korpus <- VCorpus(DirSource('listy'))
 
-content(korpus[[1]])
+content(korpus)
 
 meta(korpus[[1]])
 
@@ -77,3 +77,9 @@ getLemma <- function(t,u) {
 }
 
 korpus <- tm_map(korpus,content_transformer(getLemma),"i@i.pl")
+
+# usuwamy stopwords
+# need https://github.com/LaCH-UW/warsztatR/raw/master/data/pl_words.RData
+
+korpus <- tm_map(korpus, removeWords, c(pl_words))
+
