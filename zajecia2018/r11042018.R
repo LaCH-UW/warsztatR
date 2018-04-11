@@ -64,6 +64,6 @@ korpus <- tm_map(korpus,content_transformer(tolower))
 korpus <- tm_map(korpus,stripWhitespace)
 korpus <- tm_map(korpus,removeNumbers)
 korpus <- tm_map(korpus,removePunctuation)
-
+korpus <- tm_map(korpus,content_transformer(gsub),pattern = "–", replacement = " ", fixed = TRUE)
 
 
