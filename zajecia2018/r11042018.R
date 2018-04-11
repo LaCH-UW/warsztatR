@@ -66,9 +66,6 @@ korpus <- tm_map(korpus,removeNumbers)
 korpus <- tm_map(korpus,removePunctuation)
 korpus <- tm_map(korpus,content_transformer(gsub),pattern = "–", replacement = " ", fixed = TRUE)
 
-# prosta lematyzacja w R
-# https://wilkowski.org/notka/1587
-
 getLemma <- function(t,u) {
   library(httr)
   library(xml2)
@@ -78,3 +75,5 @@ getLemma <- function(t,u) {
   r <- gsub('[[:punct:] ]+','',unlist(as_list(xml_find_all(read_xml(r),"//base"))))
   return(r[r != ""])
 }
+
+korpus <- tm_map(korpus,content_transformer(getLemma),"i@i.pl")
