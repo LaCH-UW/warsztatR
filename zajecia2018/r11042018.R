@@ -96,3 +96,11 @@ p <- colSums(as.matrix(dtm))
 
 p1 <- as.data.frame(list(slowo=names(p),liczba=p))
 
+# usuwanie nielicznych wyrazow
+
+dtm <- removeSparseTerms(dtm,0.1)
+
+findAssocs(dtm,"gender",0.5)
+
+as.matrix(dtm[, c("wiara","ojczyzna")])
+
