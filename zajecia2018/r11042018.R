@@ -18,6 +18,5 @@ t <- gsub("\r"," ",t,fixed = TRUE)
 t <- gsub("\t"," ",t,fixed = TRUE)
 t <- gsub("„","",t, fixed = TRUE)
 t <- gsub("”","",t, fixed = TRUE)
-
-
-
+Encoding(t) <- 'UTF-8'
+write(t, file = "listy/test.txt")
