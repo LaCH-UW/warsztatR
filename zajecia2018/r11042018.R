@@ -83,3 +83,7 @@ korpus <- tm_map(korpus,content_transformer(getLemma),"i@i.pl")
 
 korpus <- tm_map(korpus, removeWords, c(pl_words))
 
+# 5. tworzymy document term matrix
+# https://en.wikipedia.org/wiki/Document-term_matrix
+
+dtm <- DocumentTermMatrix(korpus)
