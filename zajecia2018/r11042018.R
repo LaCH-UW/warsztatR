@@ -87,3 +87,12 @@ korpus <- tm_map(korpus, removeWords, c(pl_words))
 # https://en.wikipedia.org/wiki/Document-term_matrix
 
 dtm <- DocumentTermMatrix(korpus)
+
+# popularnosc slow
+
+p <- colSums(as.matrix(dtm))
+
+# data frame ze satystyka wyrazow
+
+p1 <- as.data.frame(list(slowo=names(p),liczba=p))
+
