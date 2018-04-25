@@ -20,3 +20,6 @@ setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
 t <- searchTwitteR("#poniedzialek",n=5000)
 
+# konwersja do data frame
+
+t1 <- twListToDF(t)
