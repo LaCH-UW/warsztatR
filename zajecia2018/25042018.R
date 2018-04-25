@@ -29,3 +29,7 @@ t1 <- twListToDF(t)
 library(dplyr)
 
 t1 %>% filter(isRetweet == "FALSE") -> t2
+
+# prosty sposob na sprawdzenie aktywnosci poszczegolnych userow
+
+u <- as.data.frame(table(t1$screenName), stringsAsFactors = FALSE)
