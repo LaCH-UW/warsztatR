@@ -17,3 +17,6 @@ access_secret <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 library(twitteR)
 
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
+
+t <- searchTwitteR("#poniedzialek",n=5000)
+
