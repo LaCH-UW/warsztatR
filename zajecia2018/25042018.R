@@ -57,3 +57,11 @@ t1 %>% group_by(screenName) %>% summarize(razem = n()) -> u1
 # kiedy uzytkownicy wypowiadajacy sie w #sejm rejestrowali konta?
 
 register <- users2 %>% select(screenName,created) %>% mutate(rok_rejestracji = gsub("-.*","",created))
+
+
+
+######################### Rfacebook
+
+# https://developers.facebook.com/tools/explorer/
+
+token <- "XXXXXXXXXXXXXXXXXXXXX"
