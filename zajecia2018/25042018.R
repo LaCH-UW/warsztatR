@@ -23,3 +23,9 @@ t <- searchTwitteR("#poniedzialek",n=5000)
 # konwersja do data frame
 
 t1 <- twListToDF(t)
+
+# usuwanie rt
+
+library(dplyr)
+
+t1 %>% filter(isRetweet == "FALSE") -> t2
