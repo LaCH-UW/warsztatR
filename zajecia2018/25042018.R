@@ -13,3 +13,7 @@ consumer_key <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 consumer_secret <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 access_token <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 access_secret <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+library(twitteR)
+
+setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
