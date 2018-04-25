@@ -38,4 +38,19 @@ u <- as.data.frame(table(t1$screenName), stringsAsFactors = FALSE)
 
 library(dplyr)
 
+# zbieranie danych o uzytkownikach
+# lista uzytkownikow wypowiadajacyhc sie w temacie #
+
+u1 <- t1$screenName
+u2 <- unique(u1)
+
+# sprawdzamy ich dane
+
+users <- lookupUsers(u2)
+
+# konwersja listy do df
+
+users2 <- twListToDF(users)
+
+
 t1 %>% group_by(screenName) %>% summarize(razem = n()) -> u1
