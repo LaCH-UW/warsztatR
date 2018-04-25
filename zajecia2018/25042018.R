@@ -69,3 +69,11 @@ token <- "XXXXXXXXXXXXXXXXXXXXX"
 #sciaganie wpisow z publicznej strony
 
 f <- getPage("kancelaria.premiera", token, n = 5000, reactions = TRUE, verbose = TRUE)
+
+f <- getPage("kancelaria.premiera", token, n = 1000)
+
+
+# komentarze
+
+#https://github.com/LaCH-UW/warsztatR/blob/master/zajecia/funkcje/getFbComments.R
+
