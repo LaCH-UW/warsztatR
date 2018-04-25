@@ -65,3 +65,7 @@ register <- users2 %>% select(screenName,created) %>% mutate(rok_rejestracji = g
 # https://developers.facebook.com/tools/explorer/
 
 token <- "XXXXXXXXXXXXXXXXXXXXX"
+
+#sciaganie wpisow z publicznej strony
+
+f <- getPage("kancelaria.premiera", token, n = 5000, reactions = TRUE, verbose = TRUE)
